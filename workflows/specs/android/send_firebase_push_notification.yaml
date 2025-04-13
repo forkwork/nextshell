@@ -3,9 +3,9 @@ name: Send a Firebase push notification to a local Android emulator
 command: adb shell am broadcast \
   -n {{your_app_package_name}}/com.google.firebase.iid.FirebaseInstanceIdReceiver \
   -a "com.google.android.c2dm.intent.RECEIVE" \
-           --es "title" "{{notification_title}}" \
-           --es "body" "{{notification_body}}" \
-           --es "deeplink" "{{deeplink}}"
+  --es "title" "{{notification_title}}" \
+  --es "body" "{{notification_body}}" \
+  --es "deeplink" "{{deeplink}}"
 tags:
   - android
   - adb

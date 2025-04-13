@@ -1,7 +1,7 @@
 ---
 name: Drop all tables and run Laravel's migrations and seeders
 command: |-
-    php artisan migrate:fresh --seed
+  php artisan migrate:fresh --seed
 tags:
   - Laravel
   - Php

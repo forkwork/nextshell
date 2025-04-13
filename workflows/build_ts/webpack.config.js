@@ -1,33 +1,33 @@
-const path = require('path');
+const path = require("path");
 
 module.exports = {
-  entry: './index.ts',
-  devtool: 'inline-source-map',
-  target: 'node',
+  entry: "./index.ts",
+  devtool: "inline-source-map",
+  target: "node",
   mode: "production",
   module: {
     rules: [
       {
         test: /\.tsx?$/,
-        use: 'ts-loader',
+        use: "ts-loader",
         exclude: /node_modules/,
       },
-       {
+      {
         test: /\.ya?ml$/,
-        type: 'json', // Required by Webpack v4
-        use: 'yaml-loader'
-      }
+        type: "json", // Required by Webpack v4
+        use: "yaml-loader",
+      },
     ],
   },
   resolve: {
-    extensions: ['.tsx', '.ts', '.js'],
+    extensions: [".tsx", ".ts", ".js"],
   },
   output: {
-    filename: 'nextshell-workflows.js',
-    path: path.resolve(__dirname, 'dist'),
+    filename: "nextshell-workflows.js",
+    path: path.resolve(__dirname, "dist"),
     library: {
-      name: 'nextshell-workflows',
-      type: 'umd',
+      name: "nextshell-workflows",
+      type: "umd",
     },
   },
-}
+};

@@ -1,7 +1,7 @@
 ---
 name: Optimize Laravel Framework
 command: |-
-    php artisan optimize
+  php artisan optimize
 tags:
   - php
   - laravel
@@ -10,4 +10,4 @@ arguments: []
 source_url: "https://artisan.page/#optimize"
 author: Charles Adu Boakye
 author_url: "https://github.com/4cyberlord"
-shells: []  
+shells: []

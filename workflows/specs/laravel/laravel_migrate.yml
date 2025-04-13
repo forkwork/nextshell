@@ -1,7 +1,7 @@
 ---
 name: Run Laravel database migrations
 command: |-
-    php artisan migrate
+  php artisan migrate
 tags:
   - Laravel
   - Php

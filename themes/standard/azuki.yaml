@@ -1,6 +1,6 @@
 background:
-  top: '#D6C6AF'
-  bottom: '#8f7576'
+  top: "#D6C6AF"
+  bottom: "#8f7576"
 accent: "#833042"
 foreground: "#833042"
 details: darker

@@ -1,6 +1,6 @@
 ---
 name: Sum all numbers in a file
-command: "awk 'BEGIN {OFMT = \"%.0f\"} { sum += $1 } END { print sum }' {{file_name}}"
+command: 'awk ''BEGIN {OFMT = "%.0f"} { sum += $1 } END { print sum }'' {{file_name}}'
 tags:
   - file manipulation
   - awk

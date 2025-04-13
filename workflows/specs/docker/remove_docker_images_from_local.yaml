@@ -4,7 +4,7 @@ command: docker rmi {{image_id}}
 tags:
   - docker
 description: Remove docker images currently stored on your system
-arguments: 
+arguments:
   - name: image_id
     description: The container ID of the docker container.
     default_value: ~

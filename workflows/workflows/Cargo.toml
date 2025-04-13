@@ -5,12 +5,16 @@ edition = "2021"
 
 [dependencies]
 nextshell-workflows-types = {path = "../workflow-types" }
+anyhow = "1.0"
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+reqwest = { version = "0.11", features = ["json"] }
+axum = "0.7"
+tokio = { version = "1.0", features = ["full"] }
 
 [build-dependencies]
-anyhow = "1.0"
 convert_case = "0.4.0"
 memmap = "0.7.0"
-serde_yaml = "0.8"
 uneval = {git = "https://github.com/forkwork/uneval", rev = "df4d9fad372aedc447e6f93ca0f930fabaf9dd1a"}
 walkdir = "2.3.2"
 nextshell-workflows-types = {path = "../workflow-types" }

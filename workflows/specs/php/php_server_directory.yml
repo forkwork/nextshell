@@ -1,7 +1,7 @@
 ---
 name: Start a local PHP server with a specific document root directory
 command: |-
-    php -S localhost:{{port}} -t {{directory}}
+  php -S localhost:{{port}} -t {{directory}}
 tags:
   - php
 description: A command that starts a PHP server in the specified directory.

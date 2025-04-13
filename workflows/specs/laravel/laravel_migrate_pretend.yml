@@ -1,7 +1,7 @@
 ---
 name: Pretend to run Laravel database migrations
 command: |-
-    php artisan migrate --pretend
+  php artisan migrate --pretend
 tags:
   - Laravel
   - Php

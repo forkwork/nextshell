@@ -3,7 +3,7 @@
 name: Add an Amazon S3 resource to the Meroxa Platform
 # The corresponding command for the workflow. Any arguments should be surrounded with two curly braces. E.g `command {{arg}}`.
 command: |-
-    meroxa resources create {{resource_name}} --type s3 --url "s3://{{aws_access_key}}:{{aws_access_secret}}@{{aws_region}}/{{aws_s3_bucket}}"
+  meroxa resources create {{resource_name}} --type s3 --url "s3://{{aws_access_key}}:{{aws_access_secret}}@{{aws_region}}/{{aws_s3_bucket}}"
 # Any tags that the workflow should be categorized with.
 tags:
   - meroxa
@@ -11,8 +11,8 @@ tags:
 description: Add an Amazon S3 resource to the Meroxa Platform
 # List of arguments within the command.
 arguments:
-    # Name of the argument within the command. This must exactly match the name of the argument
-    # within the command (without the curly braces).
+  # Name of the argument within the command. This must exactly match the name of the argument
+  # within the command (without the curly braces).
   - name: resource_name
     # The description of the argument.
     description: Name you want to use to identify this resource

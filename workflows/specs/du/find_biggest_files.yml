@@ -3,7 +3,7 @@
 name: Find the largest 10 files in a directory
 # The corresponding command for the workflow. Any arguments should be surrounded with two curly braces. E.g `command {{arg}}`.
 command: |-
-    du -ah {{directory}} | sort -hr | head -n 10
+  du -ah {{directory}} | sort -hr | head -n 10
 # Any tags that the workflow should be categorized with.
 tags:
   - du
@@ -11,8 +11,8 @@ tags:
 description: Uses 'du' command to find file and directory sizes in the current working directory, then sorts by size and displays 10 largest files
 # List of arguments within the command.
 arguments:
-    # Name of the argument within the command. This must exactly match the name of the argument
-    # within the command (without the curly braces).
+  # Name of the argument within the command. This must exactly match the name of the argument
+  # within the command (without the curly braces).
   - name: directory
     # The description of the argument.
     description: The name of the directory where you want to find files

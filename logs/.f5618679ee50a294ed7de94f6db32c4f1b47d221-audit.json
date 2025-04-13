@@ -1,0 +1,15 @@
+{
+  "keep": {
+    "days": true,
+    "amount": 30
+  },
+  "auditLog": "/Users/dev/nextshell/logs/.f5618679ee50a294ed7de94f6db32c4f1b47d221-audit.json",
+  "files": [
+    {
+      "date": 1744532431330,
+      "name": "/Users/dev/nextshell/logs/error-2025-04-13.log",
+      "hash": "d23e265a64bf281461be66d4f9f00d490b74a2130ffaa1311c3e04de91b1b160"
+    }
+  ],
+  "hashType": "sha256"
+}

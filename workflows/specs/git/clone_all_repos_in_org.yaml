@@ -3,7 +3,7 @@
 name: Clone all repos in a GitHub Organization
 # The corresponding command for the workflow. Any arguments should be surrounded with two curly braces. E.g `command {{arg}}`.
 command: |-
-    curl -s -H "Authorization: token {{auth_token}}" "https://api.github.com/orgs/{{org}}/repos?page={{page}}&per_page=100" | jq -r ".[].clone_url" | xargs -L1 git clone  
+  curl -s -H "Authorization: token {{auth_token}}" "https://api.github.com/orgs/{{org}}/repos?page={{page}}&per_page=100" | jq -r ".[].clone_url" | xargs -L1 git clone
 # Any tags that the workflow should be categorized with.
 tags:
   - git
@@ -12,15 +12,15 @@ tags:
 description: Uses the GitHub API to retrieve a list of repos (up to 100 per page) and clones them.
 # List of arguments within the command.
 arguments:
-    # Name of the argument within the command. This must exactly match the name of the argument
-    # within the command (without the curly braces).
+  # Name of the argument within the command. This must exactly match the name of the argument
+  # within the command (without the curly braces).
   - name: auth_token
     # The description of the argument.
     description: A personal Authorization Token created on GitHub (may need to enable SAML after token is created) https://github.com/settings/tokens
   - name: org
     description: The organization name (ex. facebook)
     # The default value for the argument.
-    default_value: facebook 
+    default_value: facebook
   - name: page
     description: Page number
     default_value: 1

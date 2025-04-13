@@ -1,6 +1,6 @@
 ---
 name: Sort a file by line length
-command: "cat {{file_name}} | awk '{ print length, $0 }' | sort -n -s | cut -d\" \" -f2-"
+command: 'cat {{file_name}} | awk ''{ print length, $0 }'' | sort -n -s | cut -d" " -f2-'
 tags:
   - file manipulation
   - awk

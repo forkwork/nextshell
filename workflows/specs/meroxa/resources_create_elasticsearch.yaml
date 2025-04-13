@@ -3,7 +3,7 @@
 name: Add an Elasticsearch resource to the Meroxa Platform
 # The corresponding command for the workflow. Any arguments should be surrounded with two curly braces. E.g `command {{arg}}`.
 command: |-
-    meroxa resources create {{resource_name}} --type elasticsearch --url "https://{{es_username}}:{{es_password}}@{{es_url}}:{{es_port}}" --metadata '{"index.prefix": "{{es_index}}","incrementing.field.name": "{{es_incrementing_field}}"}'
+  meroxa resources create {{resource_name}} --type elasticsearch --url "https://{{es_username}}:{{es_password}}@{{es_url}}:{{es_port}}" --metadata '{"index.prefix": "{{es_index}}","incrementing.field.name": "{{es_incrementing_field}}"}'
 # Any tags that the workflow should be categorized with.
 tags:
   - meroxa
@@ -11,8 +11,8 @@ tags:
 description: Add an Elasticsearch resource to the Meroxa Platform
 # List of arguments within the command.
 arguments:
-    # Name of the argument within the command. This must exactly match the name of the argument
-    # within the command (without the curly braces).
+  # Name of the argument within the command. This must exactly match the name of the argument
+  # within the command (without the curly braces).
   - name: resource_name
     # The description of the argument.
     description: Name you want to use to identify this resource
@@ -40,9 +40,9 @@ arguments:
     default_value: ~
   - name: es_incrementing_field
     # The description of the argument.
-    description: Elasticsearch Incremental Field (See View Context for more information) 
+    description: Elasticsearch Incremental Field (See View Context for more information)
     # The default value for the argument.
-    default_value: ~  
+    default_value: ~
 # The source URL for where the workflow was generated from, if any.
 source_url: "https://docs.meroxa.com/platform/resources/elasticsearch#setup"
 # The author of the workflow.

@@ -1,10 +1,10 @@
 ---
 name: Decrypt Laravel environment file
 command: |-
-     php artisan env:decrypt
+  php artisan env:decrypt
 tags:
-     - laravel
-     - php
+  - laravel
+  - php
 description: Command to decrypt Laravel environment file
 source_url: "https://laravel.com/docs/9.x/configuration#decryption"
 author: Charles Adu Boakye

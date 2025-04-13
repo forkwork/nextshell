@@ -1,10 +1,10 @@
 ---
 name: Generate missing Laravel events and listeners
 command: |-
-    php artisan event:generate
+  php artisan event:generate
 tags:
-     - laravel
-     - php
+  - laravel
+  - php
 description: Generate the missing events and listeners based on registration
 source_url: "https://artisan.page/#eventgenerate"
 author: Charles Adu Boakye

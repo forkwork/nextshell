@@ -1,6 +1,6 @@
 ---
 name: Create an empty sqlite db
-command: "sqlite3 {db_filepath} \"VACUUM;\""
+command: 'sqlite3 {db_filepath} "VACUUM;"'
 tags:
   - sqlite
 description: Uses the VACUUM command to create a valid empty SQLite database file.

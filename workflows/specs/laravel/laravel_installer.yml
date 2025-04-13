@@ -1,11 +1,11 @@
 ---
 name: Installing Laravel Installer
 command: |-
-     composer global require laravel/installer
+  composer global require laravel/installer
 tags:
-     - composer
-     - laravel
-     - php
+  - composer
+  - laravel
+  - php
 description: Install Laravel Installer
 arguments: []
 source_url: "https://laravel.com/docs/5.4/installation"

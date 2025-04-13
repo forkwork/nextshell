@@ -1,11 +1,10 @@
 ---
 name: Optimize CosmWasm Project
-command:
-  docker run --rm -v "$(pwd)":/code
+command: docker run --rm -v "$(pwd)":/code
   --mount type=volume,source="$(basename "$(pwd)")_cache",target=/code/target
   --mount type=volume,source=registry_cache,target=/usr/local/cargo/registry
   cosmwasm/rust-optimizer:0.12.12
-tags: 
+tags:
   - cosmwasm
 description: >
   Optimize a CosmWasm smart contract project. If a workspace with multiple

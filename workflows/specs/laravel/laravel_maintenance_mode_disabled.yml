@@ -1,10 +1,10 @@
 ---
 name: Laravel maintenance mode disabled
 command: |-
-     php artisan up
+  php artisan up
 tags:
-     - laravel
-     - php
+  - laravel
+  - php
 description: Disable laravel maintenance mode
 source_url: "https://laravel.com/docs/9.x/configuration#pre-rendering-the-maintenance-mode-view"
 author: Charles Adu Boakye

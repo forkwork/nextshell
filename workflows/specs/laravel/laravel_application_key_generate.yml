@@ -1,10 +1,10 @@
 ---
 name: Generate Laravel application key
 command: |-
-     php artisan key:generate
+  php artisan key:generate
 tags:
-     - laravel
-     - php
+  - laravel
+  - php
 description: Set laravel application key
 source_url: "https://artisan.page/#keygenerate"
 author: Charles Adu Boakye

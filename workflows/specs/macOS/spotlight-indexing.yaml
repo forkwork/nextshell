@@ -1,7 +1,7 @@
 ---
 name: Starts or stops the MacOS Spotlight indexing process mds_stores.
 command: |-
-    sudo mdutil -a -i {{switch}}
+  sudo mdutil -a -i {{switch}}
 tags:
   - MacOS
   - mds_stores

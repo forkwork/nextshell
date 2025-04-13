@@ -1,12 +1,12 @@
---- 
-name: Check security issues in Symfony project dependencies 
+---
+name: Check security issues in Symfony project dependencies
 command: symfony check:security
-tags: 
+tags:
   - symfony
-  - php 
+  - php
 description: Check security issues in Symfony project dependencies
-arguments: [] 
-source_url: "https://symfony.com/doc/current/setup.html#checking-security-vulnerabilities" 
-author: Łukasz Jakutowicz 
+arguments: []
+source_url: "https://symfony.com/doc/current/setup.html#checking-security-vulnerabilities"
+author: Łukasz Jakutowicz
 author_url: "https://github.com/lukaszjakutowicz"
 shells: []

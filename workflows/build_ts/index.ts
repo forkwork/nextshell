@@ -37,7 +37,7 @@ export const WORKFLOWS = new Map<WorkflowSlug, Workflow>();
 const requireContext = require.context(
   "yaml-loader!../specs",
   true,
-  /\.ya?ml$/
+  /\.ya?ml$/,
 );
 
 requireContext.keys().forEach((key: string) => {

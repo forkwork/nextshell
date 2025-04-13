@@ -1,6 +1,6 @@
 ---
 name: Attach a header to an HTTP request with cURL
-command: "curl --header \"{{header}}\" {{url}}"
+command: 'curl --header "{{header}}" {{url}}'
 tags:
   - curl
 description: Uses the --header flag to attach an additional header when sending a request to a url.

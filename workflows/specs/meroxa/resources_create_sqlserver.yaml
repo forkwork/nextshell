@@ -3,7 +3,7 @@
 name: Add a Microsoft SQL Server resource to the Meroxa Platform
 # The corresponding command for the workflow. Any arguments should be surrounded with two curly braces. E.g `command {{arg}}`.
 command: |-
-    meroxa resources create {{resource_name}} --type sqlserver --url "sqlserver://{{mssql_username}}:{{mssql_password}}@{{mssql_url}}:{{mssql_port}}/{{mssql_database_name}}"
+  meroxa resources create {{resource_name}} --type sqlserver --url "sqlserver://{{mssql_username}}:{{mssql_password}}@{{mssql_url}}:{{mssql_port}}/{{mssql_database_name}}"
 # Any tags that the workflow should be categorized with.
 tags:
   - meroxa
@@ -11,8 +11,8 @@ tags:
 description: Add a Microsoft SQL Server resource to the Meroxa Platform
 # List of arguments within the command.
 arguments:
-    # Name of the argument within the command. This must exactly match the name of the argument
-    # within the command (without the curly braces).
+  # Name of the argument within the command. This must exactly match the name of the argument
+  # within the command (without the curly braces).
   - name: resource_name
     # The description of the argument.
     description: Name you want to use to identify this resource
@@ -42,7 +42,7 @@ arguments:
     # The description of the argument.
     description: Microsoft SQL Server Database Name
     # The default value for the argument.
-    default_value: ~    
+    default_value: ~
 # The source URL for where the workflow was generated from, if any.
 source_url: "https://docs.meroxa.com/platform/resources/sqlserver/setup"
 # The author of the workflow.

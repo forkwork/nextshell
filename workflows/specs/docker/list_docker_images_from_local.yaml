@@ -1,6 +1,6 @@
 ---
 name: List docker images from local system
-command: docker image ls 
+command: docker image ls
 tags:
   - docker
 description: Lists all docker images currently stored on your system

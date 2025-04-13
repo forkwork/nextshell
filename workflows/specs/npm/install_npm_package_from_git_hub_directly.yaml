@@ -6,7 +6,7 @@ tags:
 description: "Installs an NPM package from GitHub by specifying the repo and branch. For example, if the repo was `khulnasoft/nextshell`. the command would be `npm install khulnasoft/nextshell#main`."
 arguments:
   - name: repo
-    description: "The name of the GitHub repository. For example,  \"visionmedia/express\""
+    description: 'The name of the GitHub repository. For example,  "visionmedia/express"'
     default_value: ~
   - name: branch
     description: The name of the branch within the repository to download

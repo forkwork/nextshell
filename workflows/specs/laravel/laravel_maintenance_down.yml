@@ -1,7 +1,7 @@
 ---
 name: Enable Laravel maintenance mode
 command: |-
-    php artisan down
+  php artisan down
 tags:
   - Laravel
   - Php

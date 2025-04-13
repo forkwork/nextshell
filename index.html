@@ -1,0 +1,181 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>NextShell Terminal</title>
+    <style>
+      :root {
+        --background-color: #282c34;
+        --text-color: #abb2bf;
+        --cursor-color: #528bff;
+        --selection-background: rgba(82, 139, 255, 0.3);
+        --font-family: "Menlo", "Monaco", "Courier New", monospace;
+      }
+
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      html,
+      body {
+        height: 100%;
+        width: 100%;
+        overflow: hidden;
+        background-color: var(--background-color);
+        color: var(--text-color);
+        font-family: var(--font-family);
+      }
+
+      #terminal-container {
+        height: 100%;
+        width: 100%;
+        padding: 10px;
+        display: flex;
+        flex-direction: column;
+      }
+
+      #terminal-header {
+        display: flex;
+        justify-content: space-between;
+        padding: 5px 0;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        margin-bottom: 10px;
+      }
+
+      #terminal-content {
+        flex: 1;
+        overflow: auto;
+        white-space: pre-wrap;
+        word-break: break-all;
+        line-height: 1.5;
+      }
+
+      #input-line {
+        display: flex;
+        padding: 5px 0;
+      }
+
+      #prompt {
+        color: #98c379;
+        margin-right: 5px;
+      }
+
+      #terminal-input {
+        background: transparent;
+        border: none;
+        outline: none;
+        color: var(--text-color);
+        font-family: var(--font-family);
+        font-size: inherit;
+        flex: 1;
+      }
+
+      .cursor {
+        display: inline-block;
+        width: 8px;
+        height: 1em;
+        background-color: var(--cursor-color);
+        animation: blink 1s step-end infinite;
+      }
+
+      @keyframes blink {
+        0%,
+        100% {
+          opacity: 1;
+        }
+        50% {
+          opacity: 0;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div id="terminal-container">
+      <div id="terminal-header">
+        <div>NextShell Terminal</div>
+        <div id="current-theme">Theme: Default</div>
+      </div>
+      <div id="terminal-content"></div>
+      <div id="input-line">
+        <span id="prompt">$</span>
+        <input id="terminal-input" type="text" autocomplete="off" autofocus />
+      </div>
+    </div>
+
+    <!-- Load Scripts -->
+    <script src="/workflows/build_ts/dist/nextshell-workflows.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        // Initialize terminal
+        const terminalContent = document.getElementById("terminal-content");
+        const terminalInput = document.getElementById("terminal-input");
+        const prompt = document.getElementById("prompt");
+
+        // Display welcome message
+        appendToTerminal(
+          "Welcome to NextShell - A fast, customizable terminal experience!",
+        );
+        appendToTerminal('Type "help" to see available commands.');
+
+        // Handle input
+        terminalInput.addEventListener("keydown", (e) => {
+          if (e.key === "Enter") {
+            const command = terminalInput.value.trim();
+
+            // Display command
+            appendToTerminal(`${prompt.textContent} ${command}`);
+
+            // Process command (placeholder for actual command processing)
+            processCommand(command);
+
+            // Clear input
+            terminalInput.value = "";
+          }
+        });
+
+        // Focus input on click anywhere in the terminal
+        document
+          .getElementById("terminal-container")
+          .addEventListener("click", () => {
+            terminalInput.focus();
+          });
+
+        function appendToTerminal(text) {
+          const line = document.createElement("div");
+          line.textContent = text;
+          terminalContent.appendChild(line);
+          terminalContent.scrollTop = terminalContent.scrollHeight;
+        }
+
+        function processCommand(command) {
+          // This is a placeholder - will be replaced with actual command processing
+          if (command === "help") {
+            appendToTerminal("Available commands:");
+            appendToTerminal("  help    - Display this help message");
+            appendToTerminal("  clear   - Clear the terminal");
+            appendToTerminal("  themes  - List available themes");
+          } else if (command === "clear") {
+            terminalContent.innerHTML = "";
+          } else if (command === "themes") {
+            appendToTerminal("Available themes:");
+            appendToTerminal("  - Default");
+            appendToTerminal("  - Dark");
+            appendToTerminal("  - Light");
+          } else if (command) {
+            appendToTerminal(`Command not found: ${command}`);
+          }
+        }
+
+        // Initialize with NextShell workflows if available
+        if (typeof window.WORKFLOWS !== "undefined") {
+          appendToTerminal("NextShell workflows loaded successfully.");
+        } else {
+          appendToTerminal("Warning: NextShell workflows not loaded.");
+        }
+      });
+    </script>
+  </body>
+</html>

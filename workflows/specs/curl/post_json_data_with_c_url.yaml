@@ -3,7 +3,7 @@ name: POST JSON data with cURL
 command: "curl --header \"Content-Type: application/json\" \\\n  --request POST \\\n  --data '{{json_data}}' \\\n {{url}}"
 tags:
   - curl
-description: "Sends a POST request with JSON data using curl by setting the content-type of the request to \"application/json\"."
+description: 'Sends a POST request with JSON data using curl by setting the content-type of the request to "application/json".'
 arguments:
   - name: json_data
     description: The JSON data to encode.

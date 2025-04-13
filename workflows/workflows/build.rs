@@ -24,7 +24,7 @@ fn main() -> Result<()> {
             .path()
             .extension()
             .and_then(OsStr::to_str)
-            .is_some_and(|extension| extension == "yaml" || extension == "yml");
+            .map_or(false, |extension| extension == "yaml" || extension == "yml");
 
         if valid_yaml_file {
             let file = File::open(entry.path())?;

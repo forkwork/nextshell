@@ -1,6 +1,6 @@
 ---
 name: Store result of a PostgreSQL query as a CSV file
-command: "psql -d dbname -t -A -F\",\" -c \"{{query}}\" > {{file_name}}"
+command: 'psql -d dbname -t -A -F"," -c "{{query}}" > {{file_name}}'
 tags:
   - postgresql
 description: Executes a query against a Postgres database and writes the output to a new file

@@ -9,7 +9,7 @@ arguments:
   - name: directory
     description: The directory to generate themes for
     default_value: standard
-source_url: "https://nextshell.dev"
+source_url: "https://next.khulnasoft.cim"
 author: elviskahoro
 author_url: "https://elvis.ai"
 shells: []

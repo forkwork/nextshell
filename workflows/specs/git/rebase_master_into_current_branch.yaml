@@ -1,11 +1,11 @@
 ---
 name: Rebase master into feature branch
 command: |-
-    git checkout
-    git checkout master
-    git pull origin master
-    git checkout -
-    git pull origin master --rebase
+  git checkout
+  git checkout master
+  git pull origin master
+  git checkout -
+  git pull origin master --rebase
 tags:
   - git
 description: Rebases master into the feature branch

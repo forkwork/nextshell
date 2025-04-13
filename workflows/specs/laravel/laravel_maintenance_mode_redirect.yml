@@ -1,10 +1,10 @@
 ---
-name: Redirect Laravel maintenance mode 
+name: Redirect Laravel maintenance mode
 command: |-
-     php artisan down --redirect={{URI}}
+  php artisan down --redirect={{URI}}
 tags:
-     - laravel
-     - php
+  - laravel
+  - php
 description: This command helps you redirect laravel maintenance mode by setting the secret key.
 arguments:
   - name: URI

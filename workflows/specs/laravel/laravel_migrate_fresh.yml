@@ -1,7 +1,7 @@
 ---
 name: Drop all tables and run Laravel's migrations
 command: |-
-    php artisan migrate:fresh
+  php artisan migrate:fresh
 tags:
   - Laravel
   - Php

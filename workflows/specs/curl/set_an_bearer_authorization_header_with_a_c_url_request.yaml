@@ -1,6 +1,6 @@
 ---
 name: Set an Bearer authorization header with a cURL request
-command: "curl -H \"Authorization: Bearer {{access_token}}\" {{url}}"
+command: 'curl -H "Authorization: Bearer {{access_token}}" {{url}}'
 tags: []
 description: Sends a request using cURL with a Bearer token.
 arguments:

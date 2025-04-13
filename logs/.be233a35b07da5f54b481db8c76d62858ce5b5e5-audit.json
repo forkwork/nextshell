@@ -1,0 +1,15 @@
+{
+  "keep": {
+    "days": true,
+    "amount": 14
+  },
+  "auditLog": "/Users/dev/nextshell/logs/.be233a35b07da5f54b481db8c76d62858ce5b5e5-audit.json",
+  "files": [
+    {
+      "date": 1744532431322,
+      "name": "/Users/dev/nextshell/logs/combined-2025-04-13.log",
+      "hash": "b08332d6aebf6ac07b70a31b84091509a3feebacd99a20c3b0544283ad634950"
+    }
+  ],
+  "hashType": "sha256"
+}

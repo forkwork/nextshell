@@ -1,10 +1,10 @@
 ---
 name: Create Laravel config cache file
 command: |-
-     php artisan config:clear
+  php artisan config:clear
 tags:
-     - laravel
-     - php
+  - laravel
+  - php
 description: Create a cache file for faster configuration loading
 source_url: "https://artisan.page/#configclear"
 author: Charles Adu Boakye

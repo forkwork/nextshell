@@ -1,7 +1,7 @@
 ---
 name: Start a local PHP server
 command: |-
-    php -S localhost:{{port}}
+  php -S localhost:{{port}}
 tags:
   - php
 description: A command that starts a PHP server in the current directory.

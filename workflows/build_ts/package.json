@@ -8,7 +8,7 @@
     "build": "tsc && webpack",
     "prepare": "npm run build"
   },
-  "author": "Nextshell Team (eng@nextshell.dev)",
+  "author": "Nextshell Team (eng@next.khulnasoft.cim)",
   "license": "MIT",
   "devDependencies": {
     "@types/webpack-env": "^1.16.3",

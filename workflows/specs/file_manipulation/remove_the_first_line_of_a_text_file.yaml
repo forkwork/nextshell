@@ -1,6 +1,6 @@
 ---
 name: Remove the first line of a text file
-command: "tail -n +2 \"${{file_name}}\""
+command: 'tail -n +2 "${{file_name}}"'
 tags:
   - file manipulation
   - tail

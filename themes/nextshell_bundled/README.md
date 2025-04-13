@@ -17,7 +17,7 @@
 | **[Snowy](snowy.yaml)**:                     | <img src='previews/snowy.yaml.svg' width='300'>           |
 | **[Solarized Dark](solarized_dark.yaml)**:   | <img src='previews/solarized_dark.yaml.svg' width='300'>  |
 | **[Solarized Light](solarized_light.yaml)**: | <img src='previews/solarized_light.yaml.svg' width='300'> |
-| **[Nextshell](nextshell.yaml)**:                       | <img src='previews/nextshell.yaml.svg' width='300'>            |
-| **[Nextshell Dark](nextshell_dark.yaml)**:             | <img src='previews/nextshell_dark.yaml.svg' width='300'>       |
-| **[Nextshell Light](nextshell_light.yaml)**:           | <img src='previews/nextshell_light.yaml.svg' width='300'>      |
+| **[Nextshell](nextshell.yaml)**:             | <img src='previews/nextshell.yaml.svg' width='300'>       |
+| **[Nextshell Dark](nextshell_dark.yaml)**:   | <img src='previews/nextshell_dark.yaml.svg' width='300'>  |
+| **[Nextshell Light](nextshell_light.yaml)**: | <img src='previews/nextshell_light.yaml.svg' width='300'> |
 | **[Willow Dream](willow_dream.yaml)**:       | <img src='previews/willow_dream.yaml.svg' width='300'>    |
