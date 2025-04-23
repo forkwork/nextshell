@@ -1,9 +1,9 @@
 #![deny(warnings)]
 
 use futures_util::{FutureExt, SinkExt, StreamExt};
+use serde_derive::Deserialize;
 use nextshell::ws::Message;
 use nextshell::Filter;
-use serde_derive::Deserialize;
 
 #[tokio::test]
 async fn upgrade() {
@@ -75,9 +75,7 @@ async fn binary() {
         .await
         .expect("handshake");
 
-    client
-        .send(nextshell::ws::Message::binary(&b"bonk"[..]))
-        .await;
+    client.send(nextshell::ws::Message::binary(&b"bonk"[..])).await;
     let msg = client.recv().await.expect("recv");
     assert!(msg.is_binary());
     assert_eq!(msg.as_bytes(), &b"bonk"[..]);
@@ -109,10 +107,7 @@ async fn close_frame() {
         })
     });
 
-    let client = nextshell::test::ws()
-        .handshake(route)
-        .await
-        .expect("handshake");
+    let client = nextshell::test::ws().handshake(route).await.expect("handshake");
     drop(client);
 }
 
@@ -132,10 +127,7 @@ async fn send_ping() {
         })
     });
 
-    let mut client = nextshell::test::ws()
-        .handshake(filter)
-        .await
-        .expect("handshake");
+    let mut client = nextshell::test::ws().handshake(filter).await.expect("handshake");
 
     let msg = client.recv().await.expect("recv");
     assert!(msg.is_ping());
@@ -198,13 +190,10 @@ async fn pongs_only() {
 async fn closed() {
     let _ = pretty_env_logger::try_init();
 
-    let route = nextshell::ws()
-        .map(|ws: nextshell::ws::Ws| ws.on_upgrade(|websocket| websocket.close().map(|_| ())));
+    let route =
+        nextshell::ws().map(|ws: nextshell::ws::Ws| ws.on_upgrade(|websocket| websocket.close().map(|_| ())));
 
-    let mut client = nextshell::test::ws()
-        .handshake(route)
-        .await
-        .expect("handshake");
+    let mut client = nextshell::test::ws().handshake(route).await.expect("handshake");
 
     client.recv_closed().await.expect("closed");
 }
@@ -226,14 +215,9 @@ async fn limit_message_size() {
             })
         })
     });
-    let mut client = nextshell::test::ws()
-        .handshake(echo)
-        .await
-        .expect("handshake");
+    let mut client = nextshell::test::ws().handshake(echo).await.expect("handshake");
 
-    client
-        .send(nextshell::ws::Message::binary(vec![0; 1025]))
-        .await;
+    client.send(nextshell::ws::Message::binary(vec![0; 1025])).await;
     client.send_text("hello nextshell").await;
     assert!(client.recv().await.is_err());
 }
@@ -255,14 +239,9 @@ async fn limit_frame_size() {
             })
         })
     });
-    let mut client = nextshell::test::ws()
-        .handshake(echo)
-        .await
-        .expect("handshake");
+    let mut client = nextshell::test::ws().handshake(echo).await.expect("handshake");
 
-    client
-        .send(nextshell::ws::Message::binary(vec![0; 1025]))
-        .await;
+    client.send(nextshell::ws::Message::binary(vec![0; 1025])).await;
     client.send_text("hello nextshell").await;
     assert!(client.recv().await.is_err());
 }
@@ -296,8 +275,7 @@ async fn ws_with_query() {
 }
 
 // Websocket filter that echoes all messages back.
-fn ws_echo() -> impl Filter<Extract = (impl nextshell::Reply,), Error = nextshell::Rejection> + Copy
-{
+fn ws_echo() -> impl Filter<Extract = (impl nextshell::Reply,), Error = nextshell::Rejection> + Copy {
     nextshell::ws().map(|ws: nextshell::ws::Ws| {
         ws.on_upgrade(|websocket| {
             // Just echo all messages back...

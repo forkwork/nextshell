@@ -6,10 +6,10 @@ use std::sync::{
 };
 
 use futures_util::{SinkExt, StreamExt, TryFutureExt};
-use nextshell::ws::{Message, WebSocket};
-use nextshell::Filter;
 use tokio::sync::{mpsc, RwLock};
 use tokio_stream::wrappers::UnboundedReceiverStream;
+use nextshell::ws::{Message, WebSocket};
+use nextshell::Filter;
 
 /// Our global unique user id counter.
 static NEXT_USER_ID: AtomicUsize = AtomicUsize::new(1);
@@ -129,10 +129,10 @@ async fn user_disconnected(my_id: usize, users: &Users) {
 static INDEX_HTML: &str = r#"<!DOCTYPE html>
 <html lang="en">
     <head>
-        <title>Nextshell Chat</title>
+        <title>Warp Chat</title>
     </head>
     <body>
-        <h1>Nextshell chat</h1>
+        <h1>Warp chat</h1>
         <div id="chat">
             <p><em>Connecting...</em></p>
         </div>

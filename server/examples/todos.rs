@@ -1,7 +1,7 @@
 #![deny(warnings)]
 
-use nextshell::Filter;
 use std::env;
+use nextshell::Filter;
 
 /// Provides a RESTful web server managing some Todos.
 ///
@@ -113,13 +113,10 @@ mod filters {
 /// No tuples are needed, it's auto flattened for the functions.
 mod handlers {
     use super::models::{Db, ListOptions, Todo};
-    use nextshell::http::StatusCode;
     use std::convert::Infallible;
+    use nextshell::http::StatusCode;
 
-    pub async fn list_todos(
-        opts: ListOptions,
-        db: Db,
-    ) -> Result<impl nextshell::Reply, Infallible> {
+    pub async fn list_todos(opts: ListOptions, db: Db) -> Result<impl nextshell::Reply, Infallible> {
         // Just return a JSON array of todos, applying the limit and offset.
         let todos = db.lock().await;
         let todos: Vec<Todo> = todos

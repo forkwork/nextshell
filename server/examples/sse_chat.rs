@@ -1,5 +1,4 @@
 use futures_util::{Stream, StreamExt};
-use nextshell::{sse::Event, Filter};
 use std::collections::HashMap;
 use std::sync::{
     atomic::{AtomicUsize, Ordering},
@@ -7,6 +6,7 @@ use std::sync::{
 };
 use tokio::sync::mpsc;
 use tokio_stream::wrappers::UnboundedReceiverStream;
+use nextshell::{sse::Event, Filter};
 
 #[tokio::main]
 async fn main() {
@@ -37,14 +37,11 @@ async fn main() {
         });
 
     // GET /chat -> messages stream
-    let chat_recv = nextshell::path("chat")
-        .and(nextshell::get())
-        .and(users)
-        .map(|users| {
-            // reply using server-sent events
-            let stream = user_connected(users);
-            nextshell::sse::reply(nextshell::sse::keep_alive().stream(stream))
-        });
+    let chat_recv = nextshell::path("chat").and(nextshell::get()).and(users).map(|users| {
+        // reply using server-sent events
+        let stream = user_connected(users);
+        nextshell::sse::reply(nextshell::sse::keep_alive().stream(stream))
+    });
 
     // GET / -> index html
     let index = nextshell::path::end().map(|| {
@@ -78,9 +75,7 @@ impl nextshell::reject::Reject for NotUtf8 {}
 /// - Value is a sender of `Message`
 type Users = Arc<Mutex<HashMap<usize, mpsc::UnboundedSender<Message>>>>;
 
-fn user_connected(
-    users: Users,
-) -> impl Stream<Item = Result<Event, nextshell::Error>> + Send + 'static {
+fn user_connected(users: Users) -> impl Stream<Item = Result<Event, nextshell::Error>> + Send + 'static {
     // Use a counter to assign a new unique ID for this user.
     let my_id = NEXT_USER_ID.fetch_add(1, Ordering::Relaxed);
 
@@ -127,7 +122,7 @@ static INDEX_HTML: &str = r#"
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Nextshell Chat</title>
+        <title>Warp Chat</title>
     </head>
     <body>
         <h1>nextshell chat</h1>

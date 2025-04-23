@@ -1,6 +1,6 @@
 #![deny(warnings)]
-use nextshell::Filter;
 use std::net::SocketAddr;
+use nextshell::Filter;
 
 /// Create a server that requires header conditions:
 ///

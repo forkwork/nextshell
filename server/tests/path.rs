@@ -102,18 +102,12 @@ async fn end() {
     );
 
     assert!(
-        nextshell::test::request()
-            .path("/foo")
-            .matches(&foo_end)
-            .await,
+        nextshell::test::request().path("/foo").matches(&foo_end).await,
         "path().and(end()) matches /foo"
     );
 
     assert!(
-        nextshell::test::request()
-            .path("/foo/")
-            .matches(&foo_end)
-            .await,
+        nextshell::test::request().path("/foo/").matches(&foo_end).await,
         "path().and(end()) matches /foo/"
     );
 }
@@ -131,11 +125,7 @@ async fn tail() {
     assert_eq!(ex.as_str(), "42/vroom");
 
     // matches index
-    let ex = nextshell::test::request()
-        .path("/")
-        .filter(&tail)
-        .await
-        .unwrap();
+    let ex = nextshell::test::request().path("/").filter(&tail).await.unwrap();
     assert_eq!(ex.as_str(), "");
 
     // doesn't include query
@@ -157,20 +147,10 @@ async fn tail() {
 
     // sets unmatched path index to end
     let m = tail.and(nextshell::path("foo"));
-    assert!(
-        !nextshell::test::request()
-            .path("/foo/bar")
-            .matches(&m)
-            .await
-    );
+    assert!(!nextshell::test::request().path("/foo/bar").matches(&m).await);
 
     let m = tail.and(nextshell::path::end());
-    assert!(
-        nextshell::test::request()
-            .path("/foo/bar")
-            .matches(&m)
-            .await
-    );
+    assert!(nextshell::test::request().path("/foo/bar").matches(&m).await);
 
     let ex = nextshell::test::request()
         .path("localhost")
@@ -339,12 +319,7 @@ async fn full_path() {
 
     // does not modify matching
     let m = full_path.and(foo).and(bar);
-    assert!(
-        nextshell::test::request()
-            .path("/foo/bar")
-            .matches(&m)
-            .await
-    );
+    assert!(nextshell::test::request().path("/foo/bar").matches(&m).await);
 
     // doesn't panic on authority-form
     let ex = nextshell::test::request()
@@ -372,11 +347,7 @@ async fn peek() {
     assert_eq!(ex.as_str(), "42/vroom");
 
     // matches index
-    let ex = nextshell::test::request()
-        .path("/")
-        .filter(&peek)
-        .await
-        .unwrap();
+    let ex = nextshell::test::request().path("/").filter(&peek).await.unwrap();
     assert_eq!(ex.as_str(), "");
 
     // does not include query
@@ -416,12 +387,7 @@ async fn peek() {
 
     // does not modify matching
     let and = peek.and(foo).and(bar);
-    assert!(
-        nextshell::test::request()
-            .path("/foo/bar")
-            .matches(&and)
-            .await
-    );
+    assert!(nextshell::test::request().path("/foo/bar").matches(&and).await);
 }
 
 #[tokio::test]
@@ -438,11 +404,7 @@ async fn peek_segments() {
     assert_eq!(ex.segments().collect::<Vec<_>>(), &["42", "vroom"]);
 
     // matches index
-    let ex = nextshell::test::request()
-        .path("/")
-        .filter(&peek)
-        .await
-        .unwrap();
+    let ex = nextshell::test::request().path("/").filter(&peek).await.unwrap();
 
     let segs = ex.segments().collect::<Vec<_>>();
     assert_eq!(segs, Vec::<&str>::new());

@@ -5,15 +5,14 @@
 //!
 //! [`tracing`]: https://crates.io/crates/tracing
 #![deny(warnings)]
-use nextshell::Filter;
 use tracing_subscriber::fmt::format::FmtSpan;
+use nextshell::Filter;
 
 #[tokio::main]
 async fn main() {
     // Filter traces based on the RUST_LOG env var, or, if it's not set,
     // default to show the output of the example.
-    let filter =
-        std::env::var("RUST_LOG").unwrap_or_else(|_| "tracing=info,nextshell=debug".to_owned());
+    let filter = std::env::var("RUST_LOG").unwrap_or_else(|_| "tracing=info,nextshell=debug".to_owned());
 
     // Configure the default `tracing` subscriber.
     // The `fmt` subscriber from the `tracing-subscriber` crate logs `tracing`
