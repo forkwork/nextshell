@@ -39,7 +39,9 @@ async fn bad_request_trumps_method_not_allowed() {
         .and(nextshell::path("hello"))
         .and(nextshell::header::exact("foo", "bar"))
         .map(nextshell::reply);
-    let post = nextshell::post().and(nextshell::path("bye")).map(nextshell::reply);
+    let post = nextshell::post()
+        .and(nextshell::path("bye"))
+        .map(nextshell::reply);
 
     let routes = get.or(post);
 

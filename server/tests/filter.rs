@@ -1,6 +1,6 @@
 #![deny(warnings)]
-use std::convert::Infallible;
 use nextshell::Filter;
+use std::convert::Infallible;
 
 #[tokio::test]
 async fn flattens_tuples() {
@@ -99,7 +99,11 @@ async fn or_else() {
     let f = a.or_else(|_| async { Ok::<_, nextshell::Rejection>((44u32,)) });
 
     assert_eq!(
-        nextshell::test::request().path("/33").filter(&f).await.unwrap(),
+        nextshell::test::request()
+            .path("/33")
+            .filter(&f)
+            .await
+            .unwrap(),
         33,
     );
     assert_eq!(nextshell::test::request().filter(&f).await.unwrap(), 44,);
@@ -141,7 +145,11 @@ async fn unify() {
     let b = nextshell::path::param::<u32>();
     let f = a.or(b).unify();
 
-    let ex = nextshell::test::request().path("/1").filter(&f).await.unwrap();
+    let ex = nextshell::test::request()
+        .path("/1")
+        .filter(&f)
+        .await
+        .unwrap();
 
     assert_eq!(ex, 1);
 }

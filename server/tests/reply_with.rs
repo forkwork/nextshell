@@ -13,7 +13,10 @@ async fn header() {
     assert_eq!(resp.headers()["foo"], "bar");
 
     let prev_header = nextshell::reply::with::header("foo", "sean");
-    let yes_header = nextshell::any().map(nextshell::reply).with(prev_header).with(header);
+    let yes_header = nextshell::any()
+        .map(nextshell::reply)
+        .with(prev_header)
+        .with(header);
 
     let req = nextshell::test::request();
     let resp = req.reply(&yes_header).await;
@@ -36,7 +39,10 @@ async fn headers() {
     assert_eq!(resp.headers()["server"], "nextshell");
 
     let prev_header = nextshell::reply::with::header("foo", "sean");
-    let yes_header = nextshell::any().map(nextshell::reply).with(prev_header).with(headers);
+    let yes_header = nextshell::any()
+        .map(nextshell::reply)
+        .with(prev_header)
+        .with(headers);
 
     let req = nextshell::test::request();
     let resp = req.reply(&yes_header).await;
@@ -55,7 +61,10 @@ async fn default_header() {
     assert_eq!(resp.headers()["foo"], "bar");
 
     let header = nextshell::reply::with::header("foo", "sean");
-    let yes_header = nextshell::any().map(nextshell::reply).with(header).with(def_header);
+    let yes_header = nextshell::any()
+        .map(nextshell::reply)
+        .with(header)
+        .with(def_header);
 
     let req = nextshell::test::request();
     let resp = req.reply(&yes_header).await;
