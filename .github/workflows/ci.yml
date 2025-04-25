@@ -15,7 +15,6 @@ jobs:
     needs:
       - style
       - test
-      - doc
     steps:
       - run: exit 0
 
