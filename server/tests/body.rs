@@ -100,7 +100,10 @@ async fn json_invalid() {
 
     let json = nextshell::body::json::<Vec<i32>>().map(|vec| nextshell::reply::json(&vec));
 
-    let res = nextshell::test::request().body("lol#wat").reply(&json).await;
+    let res = nextshell::test::request()
+        .body("lol#wat")
+        .reply(&json)
+        .await;
     assert_eq!(res.status(), 400);
     let prefix = b"Request body deserialize error: ";
     assert_eq!(&res.body()[..prefix.len()], prefix);

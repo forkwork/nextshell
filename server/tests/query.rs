@@ -1,8 +1,8 @@
 #![deny(warnings)]
 
+use nextshell::Filter;
 use serde_derive::Deserialize;
 use std::collections::HashMap;
-use nextshell::Filter;
 
 #[tokio::test]
 async fn query() {
