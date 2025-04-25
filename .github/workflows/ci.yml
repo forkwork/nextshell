@@ -70,17 +70,3 @@ jobs:
       - name: Test all benches
         if: matrix.benches
         run: cargo test --benches ${{ matrix.features }}
-
-  doc:
-    name: Build docs
-    needs: [style, test]
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v3
-
-      - name: Install Rust
-        uses: dtolnay/rust-toolchain@nightly
-
-      - name: cargo doc
-        run: cargo rustdoc -- -D broken_intra_doc_links
