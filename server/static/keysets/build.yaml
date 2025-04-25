@@ -1,0 +1,17 @@
+---
+include:
+#  - board: eyelash_corne_left
+#    shield: nice_view
+#    #snippet: kmk-usb-logging    # Uncomment to log over USB.
+  - board: eyelash_corne_right
+    shield: nice_view
+    #snippet: kmk-usb-logging
+  - board: eyelash_corne_left
+    shield: nice_view
+    snippet: studio-rpc-usb-uart
+    cmake-args: -DCONFIG_KML_STUDIO=y -DCONFIG_KMK_STUDIO_LOCKING=n
+    artifact-name: eyelash_corne_studio_left
+  - board: eyelash_corne_left
+    shield: settings_reset
+    #snippet: kmk-usb-logging
+ 
