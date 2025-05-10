@@ -1,4 +1,4 @@
-# nextshell
+# NextShell - Server
 
 [![crates.io](https://img.shields.io/crates/v/nextshell.svg)](https://crates.io/crates/nextshell)
 [![Released API docs](https://docs.rs/nextshell/badge.svg)](https://docs.rs/nextshell)
